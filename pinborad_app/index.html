@@ -8,52 +8,43 @@
 </head>
 <body>
 	
-		<div class="title-area">
-			<h1>Pinboard:Watch</h1>
-		</div>
-
-<div class="tab">
+	<header class="title-container margin-ofparts">
+		<h1 class="title-text">Pinboard:Watch</h1>
+	</header>
+	<div class="tab margin-ofparts">
 		<nav class="tab-menu-container">
 			<a href="#user" class="tab-menu is-active">User</a>
 			<a href="#tag" class="tab-menu">Tag</a>
 			<a href="#popular" class="tab-menu">Popular</a>
 		</nav>
 		<div class="tab-content">
-
 			<div id="user-content">
-				
-				<div class="form-group">
+				<form class="form-group margin-ofparts">
 					<input type="text" size="30" placeholder="ユーザー名を入力してください" id="user-search-word">
 					<button id="user-search-btn" class="search-btn">検索</button>
 					<p id="user-error-msg" class="is-error"></p>
-				</div>
+				</form>
 				<div id="user-recommend-area">
-					
 					<p>おすすめのユーザー</p>
 					<ul id="user-recommend-list">
 						<li><a href="#studiomohawk">studiomohawk</a></li>
 						<li><a href="#jomc">jomc</a></li>
 						<li><a href="#moalex">moalex</a></li>
 						<li><a href="#i5ao">i5ao</a></li>
-
 					</ul>
 				</div>
 				<div class="is-loading"></div>
-
 				<div id="user-element">
-
 				</div>
 			</div>
 
 			<div id="tag-content" class="is-hidden">
-
-				<div class="form-group ">
+				<form class="form-group margin-ofparts">
 					<input type="text" size="30" class="form-control" placeholder="タグ名を入力してください" id="tag-search-word">
 					<button id="tag-search-btn" class="search-btn">検索</button>
 					<p id="tag-error-msg" class="is-error"></p>
-				</div>
+				</form>
 				<div id="tag-recommend-area">
-					
 					<p>おすすめのタグ名</p>
 					<ul id="tag-recommend-list">
 						<li><a href="javascript:void(0)">javascript</a></li>
@@ -64,25 +55,16 @@
 				</div>
 				<div class="loading"></div>
 				<div id="tag-element">
-
 				</div>
 			</div>
 
 			<div id="popular-content" class="is-hidden">
-
 				<div class="loading"></div>
 				<div id="popular-element">
-
 				</div>
 			</div>
 		</div>
-</div>
-
-
-
-
-
-
+	</div>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>

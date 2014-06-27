@@ -14,23 +14,27 @@ function clickTab(menuType){
 		if(menuType!=="popular"){
 			$('#'+menuType+'-search-btn').click(function(){
 				var searchWord = $('#'+menuType+'-search-word').val();
+				switchSearchmode(menuType,searchWord)();
+			});
+			$('#'+menuType+'-recommend-list > li > a').click(function(e){
+				var searchWord = $(this).html();
+				switchSearchmode(menuType,searchWord)();
+				// e.preventDefault();	
+			});
+		}else{
+			var searchWord="";
+			loadArticle(menuType,searchWord)();
+		}
+}
+function switchSearchmode(menuType,searchWord){
+				$('#'+menuType+'-search-word').val(searchWord);
 				if(searchWord!==""){
-					loadArticle(menuType,searchWord);
+					loadArticle(menuType,searchWord)();
 				}else{
 					$('#'+menuType+'-error-msg').html(menuType+'名を入力してください');
 					$('#'+menuType+'-element').html('');
 					$('#'+menuType+'-recommend-area').removeClass('is-hidden');
 				}
-			});
-			$('#'+menuType+'-recommend-list > li > a').click(function(e){
-				e.preventDefault();	
-				searchWord = $(this).html();
-				$('#'+menuType+'-search-word').val(searchWord);
-				loadArticle(menuType,searchWord);
-			});
-		}else{
-			loadArticle(menuType,'null');
-		}
 }
 
 function loadArticle(menuType,searchWord){
@@ -47,7 +51,7 @@ function loadArticle(menuType,searchWord){
 		
 }
 function requestArticle(menuType,urlType){
-	$('.is-loading').html('<img src="img/ajax-loader.gif">');
+	$('.is-loading').html('<img src="img/ajax-loader.gif">');	
 	$.ajax({
 			type:'GET',
 			url:'http://feeds.pinboard.in/json/'+urlType,
@@ -62,12 +66,12 @@ function requestArticle(menuType,urlType){
 	});	
 }
 function showArticle(menuType,json){
-	$('.loading').empty();
+	$('.is-loading').empty();
 	for(i=0;i<10;i++){
 	var title = json[i].d,
 		url = json[i].u,
 		disc = json[i].n;
-	$('<div></div>').html('<a href="'+url+'"<h3>'+title+'</h3></a><p class="disc">'+disc+'</p><hr>').appendTo('#'+menuType+'-element');
+	$('<div></div>').addClass('margin-ofparts').html('<a href="'+url+'"<h3>'+title+'</h3></a><p class="article-disc margin-ofparts">'+disc+'</p><hr>').appendTo('#'+menuType+'-element');
 				}
 }
 function requestError(){

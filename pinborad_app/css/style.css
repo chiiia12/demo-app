@@ -1,9 +1,31 @@
 /*base*/
 /*layout*/
+*{
+	margin: auto;
+}
+body,html{
+	height: 100%;
+}
+.margin-ofparts{
+	margin: 15px;
+}
+
 /*module*/
+/*title*/
+.title-container{
+	height: 15%;
+}
+.title-text{
+	position: relative;
+	top: 30%;
+
+	
+}
+
 /*tab*/
 .tab{
-
+	width: 90%;
+	margin: 0 auto
 	}
 	.tab-menu-container{
 		height: 40px;
@@ -27,22 +49,22 @@
 		padding: 15px;
 	}
 
-	/*formgroup*/
-	.form-group{
-		margin: 20px 0px 20px 0px;
-	}
+/*formgroup*/
+.form-group{
+
+}
 	.search-btn{
-	padding: 3px 5px 3px 5px;
-	background-color: #FFF;
-	color: #696969;
-	border: 1px solid #696969;
-	border-radius: 5px;
+		padding: 3px 5px 3px 5px;
+		background-color: #FFF;
+		color: #696969;
+		border: 1px solid #696969;
+		border-radius: 5px;
 	}
 	.search-btn:hover{
-	background-color: #d3d3d3;
+		background-color: #d3d3d3;
 	}
 	.search-btn:active{
-	background-color: #778899;
+		background-color: #778899;
 	}
 /*state*/
 .is-active{
@@ -58,27 +80,20 @@
 .is-loading{
 text-align: center;
 }
+/*article*/
+.article-container{
+
+}
+.article-disc{
+	max-height: 100px;
+	overflow: hidden;
+}
+
 /*shame*/
 
-.title-area{
-	height: 100px;
-}
-.disc{
-	max-height: 100px;
-	overflow: hidden;
-}
-blockquote{
-	max-height: 100px;
-	overflow: hidden;
-}
 
 
 
-
-
-.form-group{
-	
-}
 
 
 
