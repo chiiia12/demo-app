@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pinboard:watch</title>
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body onload="load()">
+	<div>
+		<div class="title-area">
+			<h1>Pinboard:Watch</h1>
+		</div>
+
+
+		<div class="tab-menu">
+			<a href="#user-content" class="menu" data-menu="user">User</a>
+			<a href="#tag-content" class="menu" data-menu="tag">Tag</a>
+			<a href="#popular-content" class="menu" data-menu="popular">Popular</a>
+		</div>
+		<div class="tab-content">
+
+			<div id="user-content">
+				
+				<div class="form-group">
+					<input type="text" size="30" placeholder="ユーザー名を入力してください" id="user-search-word">
+					<button id="user-search-btn" class="search-btn">検索</button>
+					<p id="user-error-msg" class="is_error"></p>
+				</div>
+				<div id="user-recommend-area">
+					
+					<p>おすすめのユーザー</p>
+					<ul id="user-recommend-list">
+						<li><a href="javascript:void(0)">studiomohawk</a></li>
+						<li><a href="javascript:void(0)">jomc</a></li>
+						<li><a href="javascript:void(0)">moalex</a></li>
+						<li><a href="javascript:void(0)">i5ao</a></li>
+
+					</ul>
+				</div>
+				<div class="loading"></div>
+
+				<div id="user-element">
+
+				</div>
+			</div>
+
+			<div id="tag-content">
+
+				<div class="form-group ">
+					<input type="text" size="30" class="form-control" placeholder="タグ名を入力してください" id="tag-search-word">
+					<button id="tag-search-btn" class="search-btn">検索</button>
+					<p id="tag-error-msg" class="is-error"></p>
+				</div>
+				<div id="tag-recommend-area">
+					
+					<p>おすすめのタグ名</p>
+					<ul id="tag-recommend-list">
+						<li><a href="javascript:void(0)">javascript</a></li>
+						<li><a href="javascript:void(0)">chrome</a></li>
+						<li><a href="javascript:void(0)">browser</a></li>
+						<li><a href="javascript:void(0)">business</a></li>
+					</ul>
+				</div>
+				<div class="loading"></div>
+				<div id="tag-element">
+
+				</div>
+			</div>
+
+			<div id="popular-content">
+
+				<div class="loading"></div>
+				<div id="popular-element">
+
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
